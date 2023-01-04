@@ -1,2 +1,2 @@
 # smart-data-import-export
-Smart Data Import Exporte package for Laravel
+Smart Data Import Export package for Laravel
