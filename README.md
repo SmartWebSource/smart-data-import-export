@@ -1,6 +1,6 @@
-# smart-data-import-export
-Smart Data Import Export package for Laravel
-
+# Smart Data Export Import
+A Laravel Package for exporting data graphically.
+ 
 ## Install
 Install via composer
 ```bash
