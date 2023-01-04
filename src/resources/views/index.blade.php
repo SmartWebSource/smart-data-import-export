@@ -1,4 +1,4 @@
-@extends('universal-excel-downloader::master')
+@extends('smart-data-export-import::master')
 
 @section('content')
 <div class="container">
@@ -21,7 +21,7 @@
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ (new $model)->getTable() }}</td>
                             <td>
-                                <a href="{{ route('universal-excel-download.table.columns', $model) }}" class="btn btn-sm btn-info">Columns</a>
+                                <a href="{{ route('smart-data-export-import.table.columns', $model) }}" class="btn btn-sm btn-info">Columns</a>
                             </td>
                         </tr>
                     @endforeach
