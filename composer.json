@@ -1,0 +1,22 @@
+{
+    "name": "smartwebsource/universal-excel-downloader",
+    "description": "User can select and download excel file graphically",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Smartwebsource\\UniversalExcelDownloader\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "SmartWebSource"
+        }
+    ],
+    "require": {
+        "php": "^7.0|^8.0",
+        "illuminate/support": "^7.0|^8.0|^9.0",
+        "maatwebsite/excel": "^3.1",
+        "psr/simple-cache": "^2.0"
+    }
+}
