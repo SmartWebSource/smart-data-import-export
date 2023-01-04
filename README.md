@@ -19,8 +19,4 @@ php artisan vendor:publish \
   --provider="SmartWebSource\SmartDataExportImport\Providers\PackageServiceProvider"
 ``` 
 
-```bash
-composer require smartwebsource/smart-data-export-import
-```
-
 Go to `http://app-url/smart-data-export-import` or some other route
