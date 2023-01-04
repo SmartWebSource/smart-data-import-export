@@ -1,4 +1,4 @@
-@extends('universal-excel-downloader::master')
+@extends('smart-data-export-import::master')
 
 @section('content')
 <div class="container">
@@ -7,7 +7,7 @@
         {{ $table }} table's columns
         </div>
         <div class="card-body">
-            <form action="{{ route('universal-excel-download.download.excel') }}" method="POST">
+            <form action="{{ route('smart-data-export-import.download.excel') }}" method="POST">
                 @csrf
                 <input type="hidden" name="table" value="{{ $table }}">
                 <div class="row">

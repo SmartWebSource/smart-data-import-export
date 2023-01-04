@@ -1,8 +1,8 @@
 <?php
 
-namespace Smartwebsource\UniversalExcelDownloader\Http\Controllers;
+namespace Smartwebsource\SmartDataExportImport\Http\Controllers;
 
-use Smartwebsource\UniversalExcelDownloader\Exports\UniversalExcelExport;
+use Smartwebsource\SmartDataExportImport\Exports\SmartExcelExport;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Http\Request;
@@ -18,20 +18,20 @@ class DownloadController extends Controller
                 $tables[$index] = $value;
             }
         }
-        return view("universal-excel-downloader::table", compact('tables'));
+        return view("smart-data-export-import::table", compact('tables'));
     }
 
     public function tableColumns(string $table){
         if(Schema::hasTable($table)){
             $columns = Schema::getColumnListing($table);
-            return view("universal-excel-downloader::column-form", compact('columns', 'table'));
+            return view("smart-data-export-import::column-form", compact('columns', 'table'));
         }else{
             abort(404);
         }
     }
 
     public function downloadExcel(Request $request){
-        return Excel::download(new UniversalExcelExport($request), "{$request->table}.xlsx");
+        return Excel::download(new SmartExcelExport($request), "{$request->table}.xlsx");
     }
 
     private function allModelInTheProject(){

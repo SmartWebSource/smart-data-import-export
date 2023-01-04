@@ -1,14 +1,12 @@
 <?php
 
-namespace Smartwebsource\UniversalExcelDownloader\Exports;
+namespace Smartwebsource\SmartDataExportImport\Exports;
 
-use Illuminate\Contracts\View\View;
-use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use DB;
 
-class UniversalExcelExport implements FromCollection,WithHeadings
+class SmartExcelExport implements FromCollection,WithHeadings
 {
     private $table;
     private $columns;

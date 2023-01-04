@@ -1,11 +1,11 @@
 {
-    "name": "smartwebsource/universal-excel-downloader",
+    "name": "smartwebsource/smart-data-export-import",
     "description": "User can select and download excel file graphically",
     "type": "library",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Smartwebsource\\UniversalExcelDownloader\\": "src/"
+            "SmartWebSource\\SmartDataExportImport\\": "src/"
         }
     },
     "authors": [

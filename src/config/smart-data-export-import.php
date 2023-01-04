@@ -1,7 +1,7 @@
 <?php
 return [
     'route' =>[
-        'prefix' => 'universal-excel-downloader',
+        'prefix' => 'smart-data-export-import',
         'middleware' => ['web']
     ]
 ];
