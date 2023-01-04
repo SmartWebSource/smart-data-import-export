@@ -3,7 +3,7 @@ A Laravel Package for exporting data graphically.
  
 ## Install
 Add Path in project's composer.json file after the script block.
-```composer
+```bash
 "repositories": [
     {
         "type": "vcs",
