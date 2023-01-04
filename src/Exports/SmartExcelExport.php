@@ -1,6 +1,6 @@
 <?php
 
-namespace Smartwebsource\SmartDataExportImport\Exports;
+namespace SmartWebSource\SmartDataExportImport\Exports;
 
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;

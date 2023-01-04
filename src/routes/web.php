@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Smartwebsource\SmartDataExportImport\Http\Controllers\DownloadController;
+use SmartWebSource\SmartDataExportImport\Http\Controllers\DownloadController;
 
 Route::group(
     [

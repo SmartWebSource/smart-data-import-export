@@ -1,8 +1,8 @@
 <?php
 
-namespace Smartwebsource\SmartDataExportImport\Http\Controllers;
+namespace SmartWebSource\SmartDataExportImport\Http\Controllers;
 
-use Smartwebsource\SmartDataExportImport\Exports\SmartExcelExport;
+use SmartWebSource\SmartDataExportImport\Exports\SmartExcelExport;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Http\Request;
