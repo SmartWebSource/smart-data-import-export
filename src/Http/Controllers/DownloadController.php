@@ -34,7 +34,13 @@ class DownloadController extends Controller
 
     private function allModelInTheProject()
     {
-        $path = $path ?? app_path();
+        if(app()->version() > "7.0"){
+            $namespace = "\App\\Models";
+            $path = app_path('Models') ;
+        }else{
+            $namespace = "\App";
+            $path = app_path();
+        }
 
         $files = File::files($path);
 
@@ -43,8 +49,6 @@ class DownloadController extends Controller
 
             return $pathinfo['filename'];
         }, $files);
-
-        $namespace = "\App";
 
         $mapped = array_map(
             function ($filename) use ($namespace): ?string {
