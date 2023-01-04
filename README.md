@@ -17,7 +17,7 @@ Install via composer
 composer require smartwebsource/smart-data-export-import
 ```
 
-Add Service Provider to `config/app.php` in `providers` section
+Add Service Provider to `config/app.php` in `providers` section (optional)
 ```php
 SmartWebSource\SmartDataExportImport\PackageServiceProvider::class,
 ```
