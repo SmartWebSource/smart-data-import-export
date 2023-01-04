@@ -19,7 +19,7 @@ composer require smartwebsource/smart-data-export-import
 
 Add Service Provider to `config/app.php` in `providers` section
 ```php
-SmartWebSource\SmartDataExportImport\Providers\PackageServiceProvider::class",
+SmartWebSource\SmartDataExportImport\Providers\PackageServiceProvider::class,
 ```
 
 Publish `smart-data-export-import.php` configuration file into `/config/` for configuration customization:
