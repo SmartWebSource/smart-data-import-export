@@ -2,6 +2,16 @@
 A Laravel Package for exporting data graphically.
  
 ## Install
+Add Path in project's composer.json file after the script block.
+```composer
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/SmartWebSource/smart-data-import-export.git"
+    }
+],
+```
+
 Install via composer
 ```bash
 composer require smartwebsource/smart-data-export-import
