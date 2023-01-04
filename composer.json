@@ -1,22 +1,40 @@
 {
     "name": "smartwebsource/smart-data-export-import",
-    "description": "User can select and download excel file graphically",
-    "type": "library",
+    "description": "Download data graphically.",
+    "type": "laravel-package",
     "license": "MIT",
+    "authors": [
+        {
+            "name": "SmartWebSource",
+            "email": "admin@smartwebsource.com"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "SmartWebSource\\SmartDataExportImport\\": "src/"
         }
     },
-    "authors": [
-        {
-            "name": "SmartWebSource"
+    "autoload-dev": {
+        "psr-4": {
+            "SmartWebSource\\SmartDataExportImport\\Test\\": "tests/"
         }
-    ],
+    },
     "require": {
         "php": "^7.0|^8.0",
         "illuminate/support": "^7.0|^8.0|^9.0",
         "maatwebsite/excel": "^3.1",
         "psr/simple-cache": "^2.0"
-    }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7|^9.5.10",
+        "orchestra/testbench": "3.7.*|^7.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SmartWebSource\\SmartDataExportImport\\Providers\\PackageServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
 }
