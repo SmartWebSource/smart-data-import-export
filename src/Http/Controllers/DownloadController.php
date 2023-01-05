@@ -69,7 +69,11 @@ class DownloadController extends Controller
             $filenames
         );
 
-        $models = array_filter($mapped);
+        $skip_models = config('smart-data-export-import.skip') ? config('smart-data-export-import.skip') : [];
+
+        $models = array_filter($mapped, function($value) use($skip_models){
+            return ! in_array($value, $skip_models);
+        });
 
         return array_values($models);
     }
