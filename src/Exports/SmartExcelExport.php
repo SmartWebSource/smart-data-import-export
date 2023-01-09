@@ -23,7 +23,6 @@ class SmartExcelExport implements FromCollection,WithHeadings
             }
         }
         $this->columns = $columns;
-
     }
 
     public function headings(): array
