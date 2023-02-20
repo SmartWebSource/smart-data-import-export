@@ -14,6 +14,6 @@ Route::group(
         Route::post('/download-excel', [DownloadController::class, 'downloadExcel'])->name('smart-data-export-import.export.download.excel');
         Route::get('/{model}/file-upload', [DownloadController::class, 'fileUpload'])->name('smart-data-export-import.import.file-upload');
         Route::post('/file-upload', [DownloadController::class, 'storeFileUpload'])->name('smart-data-export-import.import.file-upload.store');
-        Route::post('/import-excel', [DownloadController::class, 'importExcel'])->name('smart-data-export-import.import.excel');
+        Route::post('/import-excel', [DownloadController::class, 'processImportExcelFile'])->name('smart-data-export-import.import.excel');
     }
 );

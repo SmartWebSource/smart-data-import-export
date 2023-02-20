@@ -65,9 +65,26 @@ class DownloadController extends Controller
         return view("smart-data-export-import::import.configure-excel-file-with-table", compact('headings', 'columns', 'table', 'file_name_with_location'));
     }
 
-    public function importExcel(Request $request){
-        Excel::import(new SmartExcelImport($request), $request->file_name_with_location);
+    public function processImportExcelFile(Request $request){
+        $equivalency = [];
+        foreach($request->columns as $db_column => $info){
+            if(isset($info['import']) && $info['import']=='yes'){
+                /* 
+                    Array's index is database table's column name
+                    and array's value is excel file column name.
+
+                */
+                $equivalency[$db_column] = $info['equivalent'];
+            }
+        }
+        $primary_colum = ['email'];
+        self::importExcel($request->file_name_with_location, $request->table, $equivalency, $primary_colum);
+        return redirect()->route('smart-data-export-import.index');
     }
+
+    public static function importExcel($excel_file, $table, $equivalent_columns, $primary_colum = []){
+        Excel::import(new SmartExcelImport($table, $equivalent_columns, $primary_colum), $excel_file);
+    } 
 
     private function allModelInTheProject()
     {

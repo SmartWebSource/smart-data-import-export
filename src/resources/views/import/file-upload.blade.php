@@ -12,7 +12,7 @@
                     <input type="hidden" name="table" value="{{ $table }}">
                     <div class="form-group">
                         <label for="excel-file">Excel file</label><br>
-                        <input type="file" name="excel_file" class="form-control" id="excel-file">
+                        <input type="file" name="excel_file" class="form-control" id="excel-file" required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-sm btn-primary mb-2 mt-2">Submit</button>
