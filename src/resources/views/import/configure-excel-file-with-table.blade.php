@@ -15,22 +15,28 @@
                     <div class="col-1">
                         <input type="checkbox" name="" id="all-checked">
                     </div>
+                    <div class="col-1">
+                        Niddle
+                    </div>
                     <div class="col-5">
                         Table Column Name
                     </div>
-                    <div class="col-6">
+                    <div class="col-5">
                         Options
                     </div>
                 </div>
                 @foreach ($columns as $column)
                     <div class="row mt-1">
                         <div class="col-1">
-                            <input type="checkbox" name="columns[{{ $column }}][import]" value="yes">
+                            <input type="checkbox" class="importing-column" name="columns[{{ $column }}][import]" value="yes">
+                        </div>
+                        <div class="col-1">
+                            <input type="checkbox" name="niddle[]" value="{{ $column }}">
                         </div>
                         <div class="col-5">
                             <input type="text" class="form-control" readonly value="{{ $column }}">
                         </div>
-                        <div class="col-6">
+                        <div class="col-5">
                             <select class="form-select" name="columns[{{ $column }}][equivalent]" id="">
                                 <option value="">Select One</option>
                                 @foreach ($headings as $heading)
@@ -55,7 +61,7 @@
     <script>
         const allCheckedBtn = document.querySelector('#all-checked');
         allCheckedBtn.addEventListener('click', function(){
-            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            var checkboxes = document.querySelectorAll('.importing-column');
             for (var checkbox of checkboxes) {
                 checkbox.checked = allCheckedBtn.checked;
             }

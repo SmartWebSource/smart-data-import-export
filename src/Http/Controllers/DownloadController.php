@@ -77,7 +77,7 @@ class DownloadController extends Controller
                 $equivalency[$db_column] = $info['equivalent'];
             }
         }
-        $primary_colum = ['email'];
+        $primary_colum = $request->niddle;
         self::importExcel($request->file_name_with_location, $request->table, $equivalency, $primary_colum);
         return redirect()->route('smart-data-export-import.index');
     }

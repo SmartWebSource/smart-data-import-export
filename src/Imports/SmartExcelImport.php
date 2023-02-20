@@ -29,55 +29,29 @@ class SmartExcelImport implements ToModel, WithHeadingRow
 
         $this->success = 0;
     }
-    
-    // public function collection(Collection $rows)
-    // {   
-        // $count = 0;
-    //     $success = 0;
-    //     foreach ($rows as $row) 
-    //     {
-    //         dd($rows);
-    //         ++$count;
-
-    //         foreach($this->columns as $table_column => $equivalent_file_heading){
-    //             $this->processing_data[$table_column] = $row[$equivalent_file_heading];
-    //         }
-
-    //         if(count($this->primary_column)){
-    //             foreach($this->primary_column as $column){
-    //                 $this->niddle[$column] = $this->processing_data[$column];
-    //             }
-    //         }
-
-    //         try{
-    //             DB::table($this->table)->updateOrInsert($this->niddle, $this->processing_data);
-    //             ++$success;
-    //         }catch(Exception|QueryException $exception){
-    //             $message = "smart-data-export-import: Importing data error. Message: {$exception->getMessage()}. Data:\n".json_encode($this->processing_data);
-    //             Log::warning($message);
-    //         }  
-
-    //         $message = "Excel import has been completed. {$success} rows are successfully imported out of {$count}.";
-    //         Session::put(['smart-data-export-import-message' => $message]);
-    //     }
-    // }
 
     public function model(array $row)
     {
-        ++$this->count;
-
-        foreach($this->columns as $table_column => $equivalent_file_heading){
-            $this->processing_data[$table_column] = $row[$equivalent_file_heading];
-        }
-
-        if(count($this->primary_column)){
-            foreach($this->primary_column as $column){
-                $this->niddle[$column] = $this->processing_data[$column];
-            }
-        }
-
         try{
+            ++$this->count;
+
+            foreach($this->columns as $table_column => $equivalent_file_heading){
+                if($table_column =="" || $equivalent_file_heading == ""){
+                    continue;
+                }
+                $this->processing_data[$table_column] = $row[$equivalent_file_heading];
+            }
+    
+            if(count($this->primary_column)){
+                foreach($this->primary_column as $column){
+                    if(isset($this->processing_data[$column])){
+                        $this->niddle[$column] = $this->processing_data[$column];
+                    }
+                }
+            }
+
             DB::table($this->table)->updateOrInsert($this->niddle, $this->processing_data);
+
             ++$this->success;
         }catch(Exception|QueryException $exception){
             $message = "smart-data-export-import: Importing data error. Message: {$exception->getMessage()}. Data:\n".json_encode($this->processing_data);
