@@ -26,7 +26,7 @@ class PackageServiceProvider extends ServiceProvider
     ], 'smart-data-export-config');
 
     $this->mergeConfigFrom(
-      __DIR__.'/config/smart-data-export-import.php', 'smart-data-export-import.php'
+      __DIR__.'/config/smart-data-export-import.php', 'smart-data-export-import'
     );
   }
 
