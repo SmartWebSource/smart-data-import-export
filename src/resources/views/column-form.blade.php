@@ -7,7 +7,7 @@
         {{ $table }} table's columns
         </div>
         <div class="card-body">
-            <form action="{{ route('smart-data-export-import.download.excel') }}" method="POST">
+            <form action="{{ route('smart-data-export-import.export.download.excel') }}" method="POST">
                 @csrf
                 <input type="hidden" name="table" value="{{ $table }}">
                 <div class="row">
